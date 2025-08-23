@@ -238,8 +238,8 @@ namespace FileConverter
 
             if (args.Length == 1)
             {
-                // Display help windows to explain that this application is a context menu extension.
-                this.showHelp = true;
+                // Display settings window by default.
+                this.showSettings = true;
                 return;
             }
 
@@ -315,6 +315,10 @@ namespace FileConverter
                             Console.WriteLine(ApplicationVersion.ToString());
                             Application.AskForShutdown();
                             return;
+
+                        case "help":
+                            this.showHelp = true;
+                            break;
 
                         case "settings":
                             this.showSettings = true;
